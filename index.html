@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherFit AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 상단 메뉴 -->
+    <header class="navbar">
+        <div class="logo">WeatherFit AI</div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#style">MY STYLE</a>
+            <a href="#outfit">OUTFIT</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+    </header>
+
+
+    <!-- HOME -->
+<section id="home" class="hero">
+
+    <p class="small-title">AI PERSONAL STYLING</p>
+
+    <h1>WeatherFit AI</h1>
+
+    <p>
+        오늘의 날씨와 나의 스타일을 고려한<br>
+        맞춤 코디를 추천받아보세요.
+    </p>
+
+
+    <!-- 날씨 영역 -->
+    <div class="weather-box">
+
+        <h3>오늘의 날씨</h3>
+
+        <label for="city">지역</label>
+
+        <select id="city">
+            <option value="">지역을 선택해주세요</option>
+            <option value="seoul">서울</option>
+            <option value="incheon">인천</option>
+            <option value="busan">부산</option>
+            <option value="daegu">대구</option>
+            <option value="daejeon">대전</option>
+            <option value="gwangju">광주</option>
+            <option value="jeju">제주</option>
+        </select>
+
+        <button id="weather-button" class="weather-button">
+            날씨 불러오기
+        </button>
+
+
+        <div id="weather-result" class="weather-result">
+        </div>
+
+    </div>
+
+
+    <a href="#style" class="main-button">
+        시작하기
+    </a>
+
+</section>
+
+
+<!-- MY STYLE -->
+<section id="style" class="section">
+    <h2>My Style</h2>
+
+    <p class="section-description">
+        나에게 맞는 코디를 추천하기 위한 스타일 정보를 입력해주세요.
+    </p>
+
+    <div class="card">
+
+        <div class="form-group">
+            <label for="body-type">체형</label>
+
+            <select id="body-type">
+                <option value="">선택해주세요</option>
+                <option value="wave">웨이브</option>
+                <option value="straight">스트레이트</option>
+                <option value="natural">내추럴</option>
+                <option value="unknown">잘 모르겠어요</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="personal-color">퍼스널 컬러</label>
+
+            <select id="personal-color">
+                <option value="">선택해주세요</option>
+                <option value="spring-warm">봄 웜</option>
+                <option value="summer-cool">여름 쿨</option>
+                <option value="autumn-warm">가을 웜</option>
+                <option value="winter-cool">겨울 쿨</option>
+                <option value="unknown">잘 모르겠어요</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="height">키</label>
+
+            <input
+                type="number"
+                id="height"
+                placeholder="예: 163"
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label>코디에서 원하는 점</label>
+
+            <div class="checkbox-group">
+
+                <label>
+                    <input type="checkbox" value="waist">
+                    허리선 강조
+                </label>
+
+                <label>
+                    <input type="checkbox" value="lower-body">
+                    하체 커버
+                </label>
+
+                <label>
+                    <input type="checkbox" value="upper-body">
+                    상체 커버
+                </label>
+
+                <label>
+                    <input type="checkbox" value="long-legs">
+                    다리가 길어 보이게
+                </label>
+
+                <label>
+                    <input type="checkbox" value="comfortable">
+                    편안한 핏
+                </label>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- OUTFIT -->
+<section id="outfit" class="section">
+    <h2>Today's Outfit</h2>
+
+    <p class="section-description">
+        오늘의 일정과 원하는 분위기를 선택해주세요.
+    </p>
+
+    <div class="card">
+
+        <div class="form-group">
+            <label for="occasion">오늘의 일정</label>
+
+            <select id="occasion">
+                <option value="">선택해주세요</option>
+                <option value="school">학교</option>
+                <option value="work">출근</option>
+                <option value="date">데이트</option>
+                <option value="friends">친구 약속</option>
+                <option value="formal">격식 있는 자리</option>
+                <option value="musical">공연 / 뮤지컬</option>
+                <option value="travel">여행</option>
+                <option value="casual-outing">편한 외출</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="style-mood">원하는 스타일</label>
+
+            <select id="style-mood">
+                <option value="">선택해주세요</option>
+                <option value="neat">단정한</option>
+                <option value="casual">캐주얼</option>
+                <option value="feminine">여성스러운</option>
+                <option value="lovely">러블리</option>
+                <option value="chic">시크</option>
+                <option value="minimal">미니멀</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="extra-request">
+                오늘 특별히 원하는 점
+            </label>
+
+            <textarea
+                id="extra-request"
+                rows="4"
+                placeholder="예: 오늘 많이 걸을 예정이라 편한 신발을 신고 싶어요."
+            ></textarea>
+        </div>
+
+
+        <button id="recommend-button" class="recommend-button">
+            오늘의 코디 추천받기
+        </button>
+        <div id="result" class="result-box">
+    </div>
+    <button id="image-button" class="image-button">
+    코디 이미지로 보기
+</button>
+
+<div id="image-result" class="image-result">
+</div>
+</section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About WeatherFit</h2>
+
+        <p class="section-description">
+            WeatherFit AI는 실제 날씨 정보와 사용자의 스타일 정보를
+            함께 고려하여 개인화된 코디를 추천하는 서비스입니다.
+        </p>
+    </section>
+<script src="js/main.js"></script>
+</body>

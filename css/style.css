@@ -1,0 +1,650 @@
+/* 페이지 전체 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+}
+
+
+/* 상단 메뉴 */
+.navbar {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background-color: white;
+
+    border-bottom: 1px solid #dddddd;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    margin-left: 25px;
+
+    text-decoration: none;
+
+    color: #222;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* 첫 화면 */
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 56px;
+
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+.small-title {
+    font-size: 13px !important;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+
+/* 시작하기 버튼 */
+.main-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 30px;
+
+    background-color: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+/* 공통 섹션 */
+.section {
+    min-height: 80vh;
+
+    padding: 100px 10%;
+}
+
+.section h2 {
+    font-size: 38px;
+
+    text-align: center;
+}
+
+.section-description {
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* 카드 */
+.card {
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+
+    font-size: 24px;
+}
+
+.placeholder {
+    padding: 15px;
+
+    background-color: #f1f1f1;
+
+    border-radius: 8px;
+
+    color: #777;
+}
+/* 입력 폼 */
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group > label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* 선택창과 입력창 */
+select,
+input[type="number"],
+textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    font-size: 16px;
+}
+
+
+/* 사용자가 글을 직접 쓰는 칸 */
+textarea {
+    resize: vertical;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* 체크박스 */
+.checkbox-group {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.checkbox-group label {
+    padding: 10px 14px;
+
+    background-color: #f3f3f3;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* 코디 추천 버튼 */
+.recommend-button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #222;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.recommend-button:hover {
+    opacity: 0.85;
+}
+/* 결과 영역 */
+.result-box {
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background-color: #f3f3f3;
+
+    border-radius: 12px;
+
+    line-height: 1.7;
+}
+
+.result-box h3 {
+    margin-top: 0;
+}
+/* 날씨 영역 */
+.weather-box {
+    width: 100%;
+    max-width: 420px;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.weather-box h3 {
+    margin-top: 0;
+}
+
+.weather-box label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    text-align: left;
+
+    font-weight: bold;
+}
+
+.weather-button {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #222;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.weather-button:hover {
+    opacity: 0.85;
+}
+
+.weather-result {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background-color: #f3f3f3;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+.ai-recommendation {
+    margin-top: 20px;
+
+    padding: 24px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e3e3e3;
+
+    border-radius: 14px;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    text-align: left;
+}
+
+.ai-recommendation strong {
+    font-weight: 700;
+}
+
+.result-box {
+    margin-top: 30px;
+
+    padding: 28px;
+
+    background-color: #f5f5f5;
+
+    border-radius: 16px;
+
+    line-height: 1.7;
+}
+
+.result-box h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.image-button {
+    display: none;
+
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #444;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.image-button:hover {
+    opacity: 0.85;
+}
+
+
+.image-result {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+
+.image-result img {
+    width: 100%;
+    max-width: 500px;
+
+    border-radius: 14px;
+}
+/* =========================
+   AI 추천 결과
+========================= */
+
+.result-box {
+    margin-top: 32px;
+    padding: 28px;
+
+    background-color: #f7f7f7;
+
+    border-radius: 18px;
+
+    text-align: left;
+}
+
+.result-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+.result-box > p {
+    margin-bottom: 20px;
+
+    color: #666666;
+
+    font-size: 15px;
+}
+
+
+/* AI 텍스트 추천 카드 */
+.ai-recommendation {
+    padding: 24px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e7e7e7;
+
+    border-radius: 14px;
+
+    line-height: 1.9;
+
+    font-size: 16px;
+
+    color: #222222;
+
+    word-break: keep-all;
+}
+
+
+/* =========================
+   이미지 생성 버튼
+========================= */
+
+.image-button {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #444444;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.image-button:hover {
+    background-color: #222222;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   AI 코디 이미지 영역
+========================= */
+
+.image-result {
+    display: none;
+
+    margin-top: 24px;
+
+    padding: 28px;
+
+    background-color: #f7f7f7;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.image-result h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+.image-result p {
+    margin-bottom: 22px;
+
+    color: #666666;
+}
+
+
+/* 생성 이미지 */
+.image-result img {
+    display: block;
+
+    width: 100%;
+    max-width: 560px;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+/* =========================
+   모바일 반응형
+========================= */
+
+@media (max-width: 768px) {
+    nav li {
+    text-align: center;
+    }
+
+    nav a {
+    display: block;
+    text-align: center;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        padding: 16px 20px;
+    }
+
+    nav ul {
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero,
+    .section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .card,
+    .weather-box,
+    .result-box,
+    .image-result {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    select,
+    input[type="number"],
+    textarea {
+        font-size: 16px;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+    }
+
+    .checkbox-group label {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .recommend-button,
+    .weather-button,
+    .image-button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .result-box {
+        padding: 20px;
+    }
+
+    .ai-recommendation {
+        padding: 18px;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .image-result {
+        padding: 18px;
+    }
+
+    .image-result img {
+        max-width: 100%;
+        border-radius: 14px;
+    }
+}
