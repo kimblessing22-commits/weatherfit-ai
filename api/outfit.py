@@ -156,6 +156,61 @@ class handler(BaseHTTPRequestHandler):
                 request_body.decode("utf-8")
             )
 
+            # 서버 측 입력값 검증
+            if not isinstance(data, dict):
+                self.send_json(
+                    400,
+                    {
+                        "message": "잘못된 요청 형식입니다."
+                    }
+                )
+                return
+
+            required_sections = ["weather", "user", "outfit"]
+
+            for section in required_sections:
+                if section not in data or not isinstance(data[section], dict):
+                    self.send_json(
+                        400,
+                        {
+                            "message": f"필수 입력값이 누락되었습니다: {section}"
+                        }
+                    )
+                    return
+
+            if not data["weather"]:
+                self.send_json(
+                    400,
+                    {
+                        "message": "날씨 정보가 필요합니다."
+                    }
+                )
+                return
+
+            required_user_fields = ["bodyType", "personalColor", "height"]
+
+            for field in required_user_fields:
+                if data["user"].get(field) in [None, ""]:
+                    self.send_json(
+                        400,
+                        {
+                            "message": f"필수 사용자 정보가 누락되었습니다: {field}"
+                        }
+                    )
+                    return
+
+            required_outfit_fields = ["occasion", "styleMood"]
+
+            for field in required_outfit_fields:
+                if data["outfit"].get(field) in [None, ""]:
+                    self.send_json(
+                        400,
+                        {
+                            "message": f"필수 코디 정보가 누락되었습니다: {field}"
+                        }
+                    )
+                    return
+
             ai_result = generate_outfit_with_ai(
                 data
             )
